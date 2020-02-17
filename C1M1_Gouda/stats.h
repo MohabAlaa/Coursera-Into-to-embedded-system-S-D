@@ -19,19 +19,19 @@
  * nicely formatted presentation.
  *
  * @author Mohab Gouda
- * @date   12-2-2020
+ * @date   17-2-2020
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-void print_statistics(unsigned char stats);
+void print_statistics(int stats);
 /**
  * @brief Print unsigned Char
  *
  * Function to print Median, Mean, Max, Mini
  *
- * @param Unsigned Char  
+ * @param int Value  
  *  
  * @return None
  */
@@ -48,7 +48,7 @@ void print_array(int* array, int size);
  * @return None
  */
 
-unsigned char find_median(int* array, int size);
+int find_median(int* array, int size);
 /**
  * @brief Find the Median 
  *
@@ -57,10 +57,10 @@ unsigned char find_median(int* array, int size);
  * @param Pointer to an array 
  * @param int size of array 
  *  
- * @return unsigned char Median value
+ * @return Median value
  */
 
-unsigned char find_mean(int* array, int size);
+int find_mean(int* array, int size);
 /**
  * @brief Find the Mean
  *
@@ -69,10 +69,10 @@ unsigned char find_mean(int* array, int size);
  * @param Pointer to an array 
  * @param int size of array 
  *  
- * @return unsigned char Mean value
+ * @return Mean value
  */
 
-unsigned char find_maximum(int* array, int size);
+int find_maximum(int* array, int size);
 /**
  * @brief Find the Maximum
  *
@@ -81,10 +81,10 @@ unsigned char find_maximum(int* array, int size);
  * @param Pointer to an array 
  * @param int size of array 
  *  
- * @return unsigned char Maximum value
+ * @return Maximum value
  */
 
-unsigned char find_minimum(int* array, int size);
+int find_minimum(int* array, int size);
 /**
  * @brief Find the minimum
  *
@@ -93,7 +93,7 @@ unsigned char find_minimum(int* array, int size);
  * @param Pointer to an array 
  * @param int size of array 
  *  
- * @return unsigned char minimum value
+ * @return minimum value
  */
 
 void sort_array(int* array, int size);
