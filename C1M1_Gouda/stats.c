@@ -19,10 +19,9 @@
  * nicely formatted presentation.
  *
  * @author Mohab Gouda
- * @date   12-2-2020
+ * @date   17-2-2020
  *
  */
-
 
 
 #include <stdio.h>
@@ -39,36 +38,164 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  //Round the unsigned array to int array 
+  int test_int[SIZE],i;
+  for(i =0;i < SIZE;i++){
+    test_int[i] = (int)test[i];
+  }
+  
+  //Print the Original array
+  printf("The original array :\n");
+  print_array(test_int,SIZE);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
+
+  //Functions implementation
+
+  //Sort Process Descendingly
+  sort_array(test_int, SIZE);
+  printf("The array after sorting process descendingly is : \n");
+  print_array(test_int, SIZE);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
+
+  //Maximum Value
+  int T = find_maximum(test_int, SIZE);
+  printf("The Maximum Value in the array is : ");
+  print_statistics(T);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
+
+  //The minimum Value
+  T = find_minimum(test_int, SIZE);
+  printf("The Minimum Value in the array is : ");
+  print_statistics(T);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
+
+  //THe Median Value if the array
+  T = find_median(test_int, SIZE);
+  printf("The Median Value of the array is : ");
+  print_statistics(T);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
+
+  //The Mean Value of the array
+  T = find_mean(test_int, SIZE);
+  printf("The Mean Value of the array is : ");
+  print_statistics(T);
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
 
 }
 
-void print_statistics(unsigned char stats){
 
+//Function Definition
+void print_statistics(int stats){
+  printf("%d\n",stats);
 }
 
 void print_array(int* array, int size){
-
+  int i;
+  for(i =0;i < size;i++){
+    if(i == 0){
+      printf("%d\t", *(array + i));
+      continue;
+    }
+    else if((i+1)%5 == 0){
+      printf("%d\n", *(array + i));
+      continue;
+    }
+    else{
+      printf("%d\t", *(array + i));
+    }
+  }
 }
 
-unsigned char find_median(int* array, int size){
+int find_median(int* array, int size){
+  int median;
 
+  /*Because of the size of the array is even 
+   *The median = (array[size/2]+array[(size/2)+1])/2
+   *Note: The median calculation take a place after sorting processe ascendingly
+   */
+  median = (*(array+ ((size - 1)/2)) + *(array + (size/2)))/2;
+  return median;
 }
 
-unsigned char find_mean(int* array, int size){
-
+int find_mean(int* array, int size){
+  int i;
+  int mean = 0;
+  for(i =0;i < size;i++){
+    mean += *(array + i);
+  }
+  mean = mean /size;
+  return mean;
 }
 
-unsigned char find_maximum(int* array, int size){
-
+int find_maximum(int* array, int size){
+  int max;
+  int i;
+  for(i =0;i < size;i++){
+    if(i == 0){
+      max = *(array + i);
+    }
+    if(*(array + i) > max){
+      max = *(array + i);
+    }
+  }
+  return max;
 }
 
-unsigned char find_minimum(int* array, int size){
-
+int find_minimum(int* array, int size){
+  int mini;
+  int i;
+  for(i = 0;i < size;i++){
+    if(i == 0){
+      mini = *(array + i);
+    }
+    if(*(array + i) < mini){
+      mini = *(array + i);
+    }
+  }
+  return mini;
 }
 
 void sort_array(int* array, int size){
-
+  int i,j;
+  for(i = 0; i < size; i++){
+    int temp;
+    for(j = i+1 ; j < size; j++){
+      if(*(array + i) < *(array + j)){
+        temp = *(array + i);
+        *(array + i) = *(array + j);
+        *(array + j) = temp;
+      }
+    }
+  }
 }
 
