@@ -47,12 +47,6 @@ void main() {
   //Print the Original array
   printf("The original array :\n");
   print_array(test_int,SIZE);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
   //Functions implementation
 
@@ -60,65 +54,61 @@ void main() {
   sort_array(test_int, SIZE);
   printf("The array after sorting process descendingly is : \n");
   print_array(test_int, SIZE);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
   //Maximum Value
   int T = find_maximum(test_int, SIZE);
   printf("The Maximum Value in the array is : ");
   print_statistics(T);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
   //The minimum Value
   T = find_minimum(test_int, SIZE);
   printf("The Minimum Value in the array is : ");
   print_statistics(T);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
   //THe Median Value if the array
   T = find_median(test_int, SIZE);
   printf("The Median Value of the array is : ");
   print_statistics(T);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
   //The Mean Value of the array
   T = find_mean(test_int, SIZE);
   printf("The Mean Value of the array is : ");
   print_statistics(T);
-  for(i = 1; i <= 60; i++){
-    printf("*");
-    if(i == 60 ){
-      printf("\n");
-    }
-  }
 
 }
 
 
 //Function Definition
+
+/**
+ * @brief Print unsigned Char
+ *
+ * Function to print Median, Mean, Max, Mini
+ *
+ * @param int Value  
+ *  
+ * @return None
+ */
 void print_statistics(int stats){
   printf("%d\n",stats);
+  for(int i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
 }
 
+/**
+ * @brief Print array of char
+ *
+ * Function to print an array of char
+ *
+ * @param Pointer to an array 
+ * @param int size of array 
+ *  
+ * @return None
+ */
 void print_array(int* array, int size){
   int i;
   for(i =0;i < size;i++){
@@ -134,19 +124,45 @@ void print_array(int* array, int size){
       printf("%d\t", *(array + i));
     }
   }
+  for(i = 1; i <= 60; i++){
+    printf("*");
+    if(i == 60 ){
+      printf("\n");
+    }
+  }
 }
 
+/**
+ * @brief Find the Median 
+ *
+ * Function to find the Median 
+ *
+ * @param Pointer to an array 
+ * @param int size of array 
+ *  
+ * @return Median value
+ */
 int find_median(int* array, int size){
   int median;
 
   /*Because of the size of the array is even 
    *The median = (array[size/2]+array[(size/2)+1])/2
-   *Note: The median calculation take a place after sorting processe ascendingly
+   *Note: The median calculation take a place after sorting processe
    */
   median = (*(array+ ((size - 1)/2)) + *(array + (size/2)))/2;
   return median;
 }
 
+/**
+ * @brief Find the Mean
+ *
+ * Function to find the Mean 
+ *
+ * @param Pointer to an array 
+ * @param int size of array 
+ *  
+ * @return Mean value
+ */
 int find_mean(int* array, int size){
   int i;
   int mean = 0;
@@ -157,6 +173,16 @@ int find_mean(int* array, int size){
   return mean;
 }
 
+/**
+ * @brief Find the Maximum
+ *
+ * Function to find the Maximum 
+ *
+ * @param Pointer to an array 
+ * @param int size of array 
+ *  
+ * @return Maximum value
+ */
 int find_maximum(int* array, int size){
   int max;
   int i;
@@ -171,6 +197,16 @@ int find_maximum(int* array, int size){
   return max;
 }
 
+/**
+ * @brief Find the minimum
+ *
+ * Function to find the minimum 
+ *
+ * @param Pointer to an array 
+ * @param int size of array 
+ *  
+ * @return minimum value
+ */
 int find_minimum(int* array, int size){
   int mini;
   int i;
@@ -185,6 +221,16 @@ int find_minimum(int* array, int size){
   return mini;
 }
 
+/**
+ * @brief Sort an array descendingly
+ *
+ * Given an array of data and length, Sort the array from largest to smalles
+ *
+ * @param Pionter to an array 
+ * @param int size of array 
+ *  
+ * @return None
+ */
 void sort_array(int* array, int size){
   int i,j;
   for(i = 0; i < size; i++){
