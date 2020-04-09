@@ -14,10 +14,21 @@ In this programming assignment, you will get more experience with Git Version co
 
  @Deal With The Program:
 
-1- Build System Target on Host Machine: $ make build PLATFORM=HOST COURSE=COURSE1 VERBOSE=VERBOSE
-2- Run The Test Code: $ ./course1.out
-3- Build System Target For ARM: $ $ make build PLATFORM=MSP432 COURSE=COURSE1 VERBOSE=VERBOSE
-4- Delete All Created Files: $ make clean
+1- Build System Target on Host Machine: 
+
+                                       $ make build PLATFORM=HOST COURSE=COURSE1 VERBOSE=VERBOSE
+2- Run The Test Code: 
+
+
+                                       $ ./course1.out
+3- Build System Target For ARM: 
+
+
+                                       $ make build PLATFORM=MSP432 COURSE=COURSE1 VERBOSE=VERBOSE
+4- Delete All Created Files: 
+
+
+                                       $ make clean
 
 
 /******************************************************************************
