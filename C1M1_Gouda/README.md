@@ -16,9 +16,13 @@ in nicely formatted presentation.
 
  @Deal With The Program:
 
-1- Build System: $ gcc stats.c
+1- Build System: 
 
-2- Run Code: $ ./stats.out
+                 $ gcc stats.c
+
+2- Run Code: 
+
+                 $ ./stats.out
 
 
 /******************************************************************************
