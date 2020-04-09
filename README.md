@@ -18,8 +18,11 @@ The second course in this 2 course series , Embedded Software and Hardware Archi
 Syllabus
 
 1- Week1: Embedded System Development Components
+
 2- Week2:Compilation with GCC and GNU Make
+
 3- Week3:Memory Types, Segments and Management
+
 4- Week4:Course 1 Final Assessment
 
 
